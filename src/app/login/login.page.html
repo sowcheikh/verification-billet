@@ -1,0 +1,51 @@
+<ion-content [fullscreen]="true" class="ion-padding">
+  <div class="login-header">
+    <img src="assets/img/Logo%20IFG.png" alt="Institut Français Gabon">
+    <h2 class="ion-margin">Suivi et validation des billets IFG</h2>
+  </div>
+  <form [formGroup]="credentials" (ngSubmit)="login()">
+    <ion-list lines="none" class="ion-margin-top">
+      <ion-item class="ion-no-margin ion-no-padding">
+        <ion-input class="ion-margin" label="Adresse électronique" formControlName="username" label-placement="floating" fill="outline" placeholder="Adresse électronique">
+          <ion-icon slot="start" name="mail" aria-hidden="true"></ion-icon>
+        </ion-input>
+      </ion-item>
+      <div *ngIf="username && username.touched" class="ion-margin-bottom errors">
+        <ion-text color="danger" *ngIf="username?.hasError('required')">
+          Adresse électronique requise
+        </ion-text>
+        <ion-text color="danger" *ngIf="username?.hasError('username')">
+          Adresse électronique invalide
+        </ion-text>
+      </div>
+      <ion-item class="ion-no-margin ion-no-padding">
+        <ion-input class="ion-margin" label-placement="floating" fill="outline" label="Mot de passe" placeholder="Mot de passe"
+                   type="{{ showPassword ? 'text' : 'password' }}" formControlName="password">
+          <ion-icon slot="start" name="lock-closed" aria-hidden="true"></ion-icon>
+          <ion-button fill="clear" slot="end" (click)="showHidePassword()">
+            <ion-icon slot="icon-only" [name]="showPassword ? 'eye' : 'eye-off'"
+                       aria-hidden="true"></ion-icon>
+          </ion-button>
+        </ion-input>
+      </ion-item>
+      <div *ngIf="password && password.touched" class="ion-margin-bottom errors">
+        <ion-text color="danger" *ngIf="password?.hasError('required')">
+          Mot de passe requis
+        </ion-text>
+        <ion-text color="danger" *ngIf="password?.hasError('minlength')">
+          Le mot de passe doit contenir au moins 6 caractères
+        </ion-text>
+      </div>
+      <ion-button class="ion-margin btn-connexion" expand="block" size="large" type="submit" [disabled]="!credentials.valid" color="primary">
+        Connexion
+      </ion-button>
+      <!-- terms and conditions -->
+      <ion-item class="ion-margin-top">
+        <ion-checkbox slot="start"></ion-checkbox>
+        <ion-label>
+          <p>En cliquant sur Connexion, vous acceptez nos <a href="#">Conditions d'utilisation</a> et notre <a href="#">Politique de confidentialité</a></p>
+        </ion-label>
+      </ion-item>
+    </ion-list>
+  </form>
+</ion-content>

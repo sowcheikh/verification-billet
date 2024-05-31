@@ -1,0 +1,21 @@
+<ion-content [fullscreen]="true">
+  <div class="img-fluid">
+    <img src="assets/img/Logo%20IFG.png" alt="Institut Français Gabon">
+  </div>
+  <!-- success message -->
+  <div *ngIf="isValide" class="ion-padding ion-text-center">
+    <ion-icon class="validation" name="checkmark-circle" size="large" color="success"></ion-icon>
+    <h2 class="ion-margin-top">Billet validé</h2>
+    <p>Le billet a été validé avec succès</p>
+  </div>
+  <!-- error message -->
+  <div *ngIf="!isValide" class="ion-padding ion-text-center">
+    <ion-icon class="validation" name="close-circle" size="large" color="danger"></ion-icon>
+    <h2 class="ion-margin-top">Billet invalide</h2>
+    <p>Le billet n'a pas pu être validé</p>
+  </div>
+  <!-- Retour pour scanner -->
+  <div class="ion-padding ion-text-center">
+    <ion-button color="primary" (click)="retour()">Retour</ion-button>
+  </div>
+</ion-content>

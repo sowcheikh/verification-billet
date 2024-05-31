@@ -1,0 +1,7 @@
+{
+  "name": "verification-billet",
+  "integrations": {
+    "capacitor": {}
+  },
+  "type": "angular"
+}

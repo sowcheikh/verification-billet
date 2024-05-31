@@ -1,0 +1,43 @@
+<ion-content class="ion-padding">
+  <div class="img-fluid">
+    <img src="assets/img/Logo%20IFG.png" alt="Institut Français Gabon">
+  </div>
+  <!-- list items -->
+<ion-list>
+    <ion-item lines="none">
+      <ion-icon slot="end" name="person"></ion-icon>
+      <ion-label class="partenaire">Partenaire</ion-label>
+    </ion-item>
+    <ion-item button>
+      <ion-label>Abonné</ion-label>
+    </ion-item>
+    <ion-item button>
+      <ion-label>Adulte</ion-label>
+    </ion-item>
+    <ion-item button>
+      <ion-label class="partenaire" >Référence de paiement</ion-label>
+      <span slot="end">IFG-2021-0001</span>
+    </ion-item>
+    <ion-item button>
+      <ion-label class="partenaire" >Infos</ion-label>
+      <span slot="end">« les rois mages »</span>
+    </ion-item>
+    <ion-item button>
+      <ion-label class="partenaire">Date de l’événement</ion-label>
+      <span slot="end">2021-12-25</span>
+    </ion-item>
+    <ion-item button>
+      <ion-label class="partenaire" >Heure de l’événement</ion-label>
+      <span slot="end">20:00</span>
+    </ion-item>
+    <ion-item button>
+      <ion-label >Tout public</ion-label>
+    </ion-item>
+</ion-list>
+  <!-- button valider, invalider -->
+  <div class="ion-padding ion-text-center">
+    <ion-button color="success" (click)="valider()">Valider</ion-button>
+    <ion-button color="danger" (click)="invalide()">Invalider</ion-button>
+  </div>
+
+</ion-content>
